@@ -1,4 +1,4 @@
-# Lab 1 - Simple Shell Commands and fork Process
+# Lab 1 - :shell: Simple shell commands and fork
 
 ## objectives
 
