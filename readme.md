@@ -265,7 +265,3 @@ int main(int argc, char *argv[])
 output:
 
 ![Untitled](Lab%201%20-%20Simple%20Shell%20Commands%20and%20fork%20Process/Untitled%203.png)
-
----
-
-[Assignment 1 - Simple shell implementation](Lab%201%20-%20Simple%20Shell%20Commands%20and%20fork%20Process/assignment.md)
