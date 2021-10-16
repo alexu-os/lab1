@@ -1,4 +1,5 @@
 # Lab 1 - :shell: Simple shell commands and fork
+**you can view and download this as a :bookmark_tabs: [PDF](https://github.com/alexu-os/lab1/blob/main/Lab_1_-_Simple_Shell_Commands_and_fork_Process.pdf) as well**
 
 ## objectives
 
