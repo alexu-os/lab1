@@ -38,7 +38,7 @@
 - **uniq** -- remove adjacent duplicate lines
 - **find** -- find files and directories and perform subsequent operations on them
 - More commands and with extra examples:
-    - [https://gist.github.com/riipandi/3097780](https://gist.github.com/riipandi/3097780)
+  - [https://gist.github.com/riipandi/3097780](https://gist.github.com/riipandi/3097780)
 
 ## Compiling .c files
 
@@ -92,8 +92,8 @@ The function takes no arguments.
 
 - On fail, it returns a negative value
 - On success, `fork()` returns:
-    - a zero to the newly created child process.
-    - a positive value, which is the process ID of the child process, to the parent.
+  - a zero to the newly created child process.
+  - a positive value, which is the process ID of the child process, to the parent.
 
 Using this fact, after the system call to fork(), a simple test can tell which process is the child.
 
@@ -121,7 +121,7 @@ int main() {
    else { /* parent process */
 	 	 printf("I'm the Parent => PID: %d\n", getpid());
 	 	 printf("Waiting for child process to finish.\n");
-		 
+
 	 	 /* parent will wait for the child to complete */
 	   wait(NULL);
 		 /* When the child is ended, then the parent will continue to execute its code */
@@ -130,9 +130,9 @@ int main() {
 }
 ```
 
-![unnamed.jpg](Lab%201%20-%20Simple%20Shell%20Commands%20and%20fork%20Process%20c7f0178f91cb47af91952c03bbfed510/unnamed.jpg)
+![unnamed.jpg](Lab%201%20-%20Simple%20Shell%20Commands%20and%20fork%20Process/unnamed.jpg)
 
-![unnamed (1).jpg](Lab%201%20-%20Simple%20Shell%20Commands%20and%20fork%20Process%20c7f0178f91cb47af91952c03bbfed510/unnamed_(1).jpg)
+![unnamed (1).jpg](<Lab%201%20-%20Simple%20Shell%20Commands%20and%20fork%20Process/unnamed_(1).jpg>)
 
 Both processes will start their execution at the next statement following the `fork()` call.
 
@@ -170,7 +170,7 @@ int main()
 }
 ```
 
-![Untitled](Lab%201%20-%20Simple%20Shell%20Commands%20and%20fork%20Process%20c7f0178f91cb47af91952c03bbfed510/Untitled.png)
+![Untitled](Lab%201%20-%20Simple%20Shell%20Commands%20and%20fork%20Process/Untitled.png)
 
 ```c
 int main()
@@ -183,7 +183,7 @@ int main()
 }
 ```
 
-![Untitled](Lab%201%20-%20Simple%20Shell%20Commands%20and%20fork%20Process%20c7f0178f91cb47af91952c03bbfed510/Untitled%201.png)
+![Untitled](Lab%201%20-%20Simple%20Shell%20Commands%20and%20fork%20Process/Untitled%201.png)
 
 Multiple forks result in 2^n processes
 
@@ -219,7 +219,7 @@ int main(int argc, char *argv[]){
 
 output:
 
-![Untitled](Lab%201%20-%20Simple%20Shell%20Commands%20and%20fork%20Process%20c7f0178f91cb47af91952c03bbfed510/Untitled%202.png)
+![Untitled](Lab%201%20-%20Simple%20Shell%20Commands%20and%20fork%20Process/Untitled%202.png)
 
 ### Difference between `fork()` and `execv()` system calls:
 
@@ -247,7 +247,7 @@ int main(int argc, char *argv[])
 	    execv("./hello", args);
     }
     else {
-        printf("We are in the parent process");  
+        printf("We are in the parent process");
 		}
     return 0;
 }
@@ -266,8 +266,8 @@ int main(int argc, char *argv[])
 
 output:
 
-![Untitled](Lab%201%20-%20Simple%20Shell%20Commands%20and%20fork%20Process%20c7f0178f91cb47af91952c03bbfed510/Untitled%203.png)
+![Untitled](Lab%201%20-%20Simple%20Shell%20Commands%20and%20fork%20Process/Untitled%203.png)
 
 ---
 
-[Assignment 1 - Simple shell implementation](Lab%201%20-%20Simple%20Shell%20Commands%20and%20fork%20Process%20c7f0178f91cb47af91952c03bbfed510/Assignment%201%20-%20Simple%20shell%20implementation%2047e7510d5b70467f8ab8c466174299e5.md)
+[Assignment 1 - Simple shell implementation](Lab%201%20-%20Simple%20Shell%20Commands%20and%20fork%20Process/assignment.md)
