@@ -47,7 +47,7 @@
 
 int main()
 {
-	printf("\nA sample C program\n\n");
+	printf("Hello world!");
 	return 0;
 }
 ```
@@ -105,28 +105,26 @@ Using this fact, after the system call to fork(), a simple test can tell which p
 
 int main() {
 
-   /* fork a child process */
-   pid_t pid = fork();
+	/* fork a child process */
+	pid_t pid = fork();
 
-   if (pid < 0) { /* error occurred */
-	   printf("Fork failed Unable to create child process.\n");
-	   return 1;
-   }
+	if (pid < 0) { /* error occurred */
+		printf("Fork failed Unable to create child process.\n");
+		return 1;
+	}
+	else if (pid == 0) { /* child process */
+		printf("I'm the Child => PPID: %d PID: %d\n", getppid(), getpid());
+		exit(EXIT_SUCCESS);
+	}
+	else { /* parent process */
+		printf("I'm the Parent => PID: %d\n", getpid());
+		printf("Waiting for child process to finish.\n");
 
-   else if (pid == 0) { /* child process */
-	   printf("I'm the Child => PPID: %d PID: %d\n", getppid(), getpid());
-	   exit(EXIT_SUCCESS);
-   }
-
-   else { /* parent process */
-	 	 printf("I'm the Parent => PID: %d\n", getpid());
-	 	 printf("Waiting for child process to finish.\n");
-
-	 	 /* parent will wait for the child to complete */
-	   wait(NULL);
-		 /* When the child is ended, then the parent will continue to execute its code */
-		 printf("Child Complete \n");
-   }
+		/* parent will wait for the child to complete */
+		wait(NULL);
+		/* When the child is ended, then the parent will continue to execute its code */
+		printf("Child Complete \n");
+	}
 }
 ```
 
@@ -199,11 +197,11 @@ example.c
 
 ```c
 int main(int argc, char *argv[]){
-    printf("PID of example.c = %d\n", getpid());
-    char *args[] = {"Hello", "C", "Programming", NULL};
-    execv("./hello", args);
-    printf("Back to example.c");
-    return 0;
+	printf("PID of example.c = %d\n", getpid());
+	char *args[] = {"Hello", "C", "Programming", NULL};
+	execv("./hello", args);
+	printf("Back to example.c");
+	return 0;
 }
 ```
 
@@ -211,9 +209,9 @@ hello.c
 
 ```c
 int main(int argc, char *argv[]){
-    printf("We are in Hello.c\n");
-    printf("PID of hello.c = %d\n", getpid());
-    return 0;
+	printf("We are in Hello.c\n");
+	printf("PID of hello.c = %d\n", getpid());
+	return 0;
 }
 ```
 
@@ -234,22 +232,22 @@ example.c
 ```c
 int main(int argc, char *argv[])
 {
-    printf("PID of example.c = %d\n", getpid());
-    pid_t p;
-    p = fork();
-    if(p==-1) {
-        printf("There is an error while calling fork()");
-    }
-    if(p==0) {
-	    printf("We are in the child process\n");
-	    printf("Calling hello.c from child process\n");
-	    char *args[] = {"Hello", "C", "Programming", NULL};
-	    execv("./hello", args);
-    }
-    else {
-        printf("We are in the parent process");
-		}
-    return 0;
+	printf("PID of example.c = %d\n", getpid());
+	pid_t p;
+	p = fork();
+	if(p==-1) {
+		printf("There is an error while calling fork()");
+	}
+	if(p==0) {
+		printf("We are in the child process\n");
+		printf("Calling hello.c from child process\n");
+		char *args[] = {"Hello", "C", "Programming", NULL};
+		execv("./hello", args);
+	}
+	else {
+		printf("We are in the parent process");
+	}
+	return 0;
 }
 ```
 
@@ -258,9 +256,9 @@ hello.c
 ```c
 int main(int argc, char *argv[])
 {
-    printf("We are in Hello.c\n");
-    printf("PID of hello.c = %d\n", getpid());
-    return 0;
+	printf("We are in Hello.c\n");
+	printf("PID of hello.c = %d\n", getpid());
+	return 0;
 }
 ```
 
